@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Proposta Comercial - Sotero Construções" />
+  <title>Proposta para Sotero Construções (Sra. Vânia)</title>
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.04);
+      --border:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --subtle:rgba(255,255,255,.58);
+      --accent:#FCDC54;
+      --accent2:#9BE7FF;
+      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:14px;
+      --max:1080px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(252,220,84,.14), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(155,231,255,.10), transparent 60%),
+        radial-gradient(800px 500px at 50% 110%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(100% - 32px, var(--max)); margin:0 auto; }
+
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.72);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0; gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width:240px;
+    }
+    .mark{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(252,220,84,.95), rgba(155,231,255,.65));
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+    .brand strong{ font-weight:760; letter-spacing:.2px; }
+    .brand span{ display:block; font-size:12.5px; color:var(--subtle); margin-top:1px; }
+
+    .nav{ display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; }
+    .pill{
+      font-size:12.5px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.10);
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    header.hero{ padding:56px 0 24px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      padding:26px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width:280px; height:280px;
+      background: radial-gradient(circle at 30% 30%, rgba(252,220,84,.25), transparent 60%);
+      transform: rotate(20deg);
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      font-size:13px; color:var(--muted);
+      margin-bottom:10px;
+    }
+    .tag{
+      font-family: var(--mono);
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.82);
+    }
+    .hero h1{
+      margin:0 0 8px;
+      font-size: clamp(28px, 4.2vw, 44px);
+      letter-spacing: -0.6px;
+      line-height:1.08;
+    }
+    .accent{ color: var(--accent); }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 15.5px;
+      max-width: 64ch;
+    }
+    .hero-actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.90);
+      font-size:14px;
+      font-weight:650;
+      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.primary{
+      border-color: rgba(252,220,84,.25);
+      background: linear-gradient(135deg, rgba(252,220,84,.22), rgba(155,231,255,.08));
+    }
+
+    .side-card{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      padding:20px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .kv{ display:grid; grid-template-columns:1fr; gap:10px; }
+    .kv-row{
+      display:flex; justify-content:space-between; gap:16px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .kv-row b{ font-weight:680; color: rgba(255,255,255,.88); }
+    .kv-row span{
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12.5px;
+      white-space: nowrap;
+    }
+    .note{
+      font-size: 13px;
+      color: var(--subtle);
+      border-left: 2px solid rgba(252,220,84,.55);
+      padding-left: 12px;
+      margin-top: 2px;
+    }
+
+    main{ padding: 18px 0 68px; }
+    .section{
+      margin-top:14px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .section-header{
+      padding:18px 18px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .section-header h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.2px;
+      font-weight:750;
+    }
+    .section-header .hint{
+      color:var(--subtle);
+      font-size:12.5px;
+      font-family: var(--mono);
+    }
+    .section-body{ padding: 16px 18px 18px; }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:14px;
+      font-weight:760;
+      letter-spacing:.2px;
+    }
+    .list{
+      margin:0;
+      padding-left:18px;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .list li{ margin:7px 0; }
+
+    .callout{
+      border:1px solid rgba(252,220,84,.22);
+      background: linear-gradient(135deg, rgba(252,220,84,.11), rgba(155,231,255,.06));
+      border-radius: var(--radius2);
+      padding:14px;
+      color: rgba(255,255,255,.88);
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    .price{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      padding:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .price .badge{
+      position:absolute;
+      top:12px; right:12px;
+      font-size:11.5px;
+      font-family: var(--mono);
+      color: rgba(255,255,255,.82);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      padding:6px 9px;
+      border-radius:999px;
+    }
+    .price h3{
+      margin:0 0 6px;
+      font-size:14px;
+      font-weight:800;
+    }
+    .value{
+      font-size:30px;
+      letter-spacing:-0.6px;
+      font-weight:900;
+      margin:6px 0 10px;
+    }
+    .value small{
+      font-size:12px;
+      color: var(--subtle);
+      font-weight:650;
+      margin-left:6px;
+      font-family: var(--mono);
+    }
+    .price p{
+      margin:0 0 10px;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.08);
+      margin: 12px 0;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .step{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+      min-height:108px;
+    }
+    .step .n{
+      font-family: var(--mono);
+      color: rgba(252,220,84,.90);
+      font-weight:900;
+      font-size:12px;
+    }
+    .step b{
+      display:block;
+      margin-top:6px;
+      font-weight:760;
+      font-size:13.5px;
+    }
+    .step span{
+      display:block;
+      margin-top:6px;
+      color: var(--muted);
+      font-size:13px;
+    }
+
+    footer{ padding:18px 0 34px; color: var(--subtle); font-size:12.5px; }
+    .footer-card{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:14px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .footer-card .meta{
+      font-family: var(--mono);
+      font-size:12px;
+      color: rgba(255,255,255,.60);
+    }
+
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .nav{ justify-content:flex-start; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px){
+      header.hero{ padding:42px 0 18px; }
+      .hero-card{ padding:18px; }
+      .side-card{ padding:16px; }
+      .section-header{ padding:16px 14px 10px; }
+      .section-body{ padding:14px; }
+      .steps{ grid-template-columns: 1fr; }
+      .kv-row{ flex-direction:column; align-items:flex-start; }
+      .kv-row span{ white-space:normal; }
+    }
+
+    @media print{
+      .topbar{ position: static; }
+      body{ background:#fff; color:#111; }
+      .section,.hero-card,.side-card,.footer-card,.card,.price,.step,.kv-row{
+        box-shadow:none !important;
+        background:#fff !important;
+        border-color:#ddd !important;
+      }
+      .pill,.tag,.btn{ border-color:#ddd !important; color:#111 !important; }
+      .accent{ color:#b48b00 !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand" aria-label="Cabeçalho">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <strong>Proposta Comercial</strong>
+          <span>Darllan Moreira</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegação">
+        <a class="pill" href="#diagnostico">Diagnóstico</a>
+        <a class="pill" href="#resultado">Resultado</a>
+        <a class="pill" href="#escopo">Escopo</a>
+        <a class="pill" href="#investimento">Investimento</a>
+        <a class="pill" href="#porque-eu">Por que eu</a>
+        <a class="pill" href="#proximos-passos">Próximos passos</a>
+        <a class="pill" href="#validade">Validade</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <section class="hero-card" aria-label="Hero">
+        <div class="eyebrow">
+          <span class="tag">Sotero Construções</span>
+          <span class="tag">Vídeo institucional</span>
+          <span class="tag">Até 1min30s</span>
+        </div>
+
+        <h1>
+          Proposta para <span class="accent">Sra. Vânia</span>
+        </h1>
+
+        <p>
+          Produção completa de vídeo com <b>roteiro</b>, captação em <b>solo</b> e <b>drone</b>,
+          <b>edição profissional</b> e <b>locução</b>, pronto para Reels (vertical) ou horizontal,
+          conforme preferência.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#investimento" aria-label="Ir para investimento">
+            Ver investimento
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="#proximos-passos" aria-label="Ir para próximos passos">
+            Como fechar agora
+            <span aria-hidden="true">✓</span>
+          </a>
+        </div>
+      </section>
+
+      <aside class="side-card" aria-label="Resumo">
+        <div class="kv">
+          <div class="kv-row">
+            <b>Duração do vídeo</b>
+            <span>até 1min30s</span>
+          </div>
+          <div class="kv-row">
+            <b>Formato</b>
+            <span>Vertical ou horizontal</span>
+          </div>
+          <div class="kv-row">
+            <b>Captação</b>
+            <span>Câmera + drone</span>
+          </div>
+          <div class="kv-row">
+            <b>Inclui</b>
+            <span>Roteiro + locução</span>
+          </div>
+          <div class="kv-row">
+            <b>Prazo</b>
+            <span>Alinhado após captação</span>
+          </div>
+        </div>
+
+        <div class="note">
+          Proposta com reserva por <b>72 horas</b>.
+          A data de captação só é garantida após o pagamento do sinal.
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="diagnostico" aria-label="Diagnóstico">
+      <div class="section-header">
+        <h2>1. Diagnóstico</h2>
+        <div class="hint">o que eu entendi</div>
+      </div>
+      <div class="section-body">
+        <p style="margin:0;color:var(--muted);font-size:14.5px;">
+          A Sotero Construções precisa de um <b>vídeo institucional com locução</b> para comunicar
+          padrão de qualidade, estrutura e profissionalismo. No mercado da construção civil,
+          quem comunica bem se posiciona melhor e fecha com mais confiança do cliente.
+        </p>
+
+        <div style="height:12px"></div>
+
+        <div class="callout">
+          O objetivo aqui é simples: em até <b>1 minuto e 30 segundos</b>, fazer o público entender
+          <b>quem é a Sotero Construções</b> e <b>qual padrão de entrega</b> a empresa tem.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resultado" aria-label="Resultado esperado">
+      <div class="section-header">
+        <h2>2. O resultado esperado</h2>
+        <div class="hint">o que você terá depois</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Usos imediatos</h3>
+            <ul class="list">
+              <li>Publicar no Instagram (Reels ou feed)</li>
+              <li>Enviar para potenciais clientes e parceiros</li>
+              <li>Apresentar a empresa de forma objetiva e profissional</li>
+              <li>Usar como vídeo institucional da marca</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>O que melhora na percepção</h3>
+            <ul class="list">
+              <li>Mais credibilidade no primeiro contato</li>
+              <li>Mais clareza do padrão de obra e organização</li>
+              <li>Comunicação alinhada com o nível da empresa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="escopo" aria-label="Escopo do serviço">
+      <div class="section-header">
+        <h2>3. Escopo do serviço</h2>
+        <div class="hint">o que está incluído</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Planejamento</h3>
+            <ul class="list">
+              <li>Roteirização estratégica do vídeo</li>
+              <li>Definição de narrativa e sequência de imagens</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Captação</h3>
+            <ul class="list">
+              <li>Captação com câmera em solo</li>
+              <li>Captação com drone</li>
+              <li>Todos os equipamentos necessários inclusos</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Pós-produção</h3>
+            <ul class="list">
+              <li>Edição profissional</li>
+              <li>Locução (áudio no fundo)</li>
+              <li>Tratamento de cor e finalização</li>
+              <li>Ajuste de ritmo e narrativa</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Entrega</h3>
+            <ul class="list">
+              <li>Vídeo final de até 1min30s</li>
+              <li>Formato vertical (Reels) ou horizontal, conforme preferência</li>
+              <li>Arquivo pronto para publicação</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+        <div class="note">
+          O vídeo pode ser entregue em vertical, horizontal ou nas duas versões, caso seja solicitado.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="investimento" aria-label="Investimento">
+      <div class="section-header">
+        <h2>4. Investimento</h2>
+        <div class="hint">valor e entregas</div>
+      </div>
+
+      <div class="section-body">
+        <div class="pricing">
+          <div class="price" role="region" aria-label="Investimento único">
+            <div class="badge">Projeto completo</div>
+            <h3>Produção completa do vídeo institucional</h3>
+            <div class="value">R$ 3.800 <small>até 1min30s</small></div>
+            <p>Inclui planejamento, captação (solo + drone), edição e locução, com entrega pronta para redes sociais.</p>
+
+            <div class="divider"></div>
+
+            <ul class="list">
+              <li>Roteirização estratégica</li>
+              <li>Captação profissional em solo</li>
+              <li>Captação aérea com drone</li>
+              <li>Edição profissional</li>
+              <li>Locução (áudio no fundo)</li>
+              <li>Entrega em vertical ou horizontal</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="callout">
+              <b>Condições:</b> 50% para reserva da data de captação e 50% na entrega do vídeo final.
+            </div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+        <div class="note">
+          A reserva de data acontece somente após o pagamento do sinal.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="porque-eu" aria-label="Por que eu">
+      <div class="section-header">
+        <h2>5. Por que eu</h2>
+        <div class="hint">por que isso não é um vídeo comum</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="card">
+            <h3>1) Roteiro e narrativa</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px;">
+              Eu não começo pela câmera. Eu começo pela mensagem. O vídeo nasce com roteiro para
+              mostrar estrutura, obra e padrão de entrega com clareza.
+            </p>
+          </div>
+          <div class="card">
+            <h3>2) Captação que valoriza obra</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px;">
+              Solo e drone não são enfeite. É perspectiva. Isso dá força visual, eleva a percepção e
+              mostra dimensão e acabamento do projeto.
+            </p>
+          </div>
+          <div class="card" style="grid-column: 1 / -1;">
+            <h3>3) Vídeo pronto para gerar negócio</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px;">
+              Você recebe um material com cara de institucional, mas com ritmo de redes sociais.
+              Serve para Instagram, apresentação e envio direto para clientes.
+            </p>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+        <div class="note">
+          Se a comparação for com concorrentes, compare o pacote completo: roteiro, captação em dois níveis,
+          locução e finalização pensada para posicionamento.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proximos-passos" aria-label="Próximos passos">
+      <div class="section-header">
+        <h2>6. Próximos passos</h2>
+        <div class="hint">fechamento simples</div>
+      </div>
+      <div class="section-body">
+        <div class="callout">
+          Eu seguro as condições desta proposta por <b>72 horas</b>. Após esse prazo, a agenda e o valor
+          podem mudar conforme demanda.
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="n">PASSO 01</div>
+            <b>Confirmação</b>
+            <span>Você confirma o projeto e o formato de entrega (vertical ou horizontal).</span>
+          </div>
+          <div class="step" role="listitem">
+            <div class="n">PASSO 02</div>
+            <b>Local da gravação</b>
+            <span>Definimos a obra ou ambiente para captação.</span>
+          </div>
+          <div class="step" role="listitem">
+            <div class="n">PASSO 03</div>
+            <b>Reserva da data</b>
+            <span>50% de sinal para garantir a agenda de captação.</span>
+          </div>
+          <div class="step" role="listitem">
+            <div class="n">PASSO 04</div>
+            <b>Roteiro</b>
+            <span>Eu inicio a roteirização e alinhamos antes da gravação.</span>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="https://wa.me/5585996308174" target="_blank" rel="noopener noreferrer">
+            Falar comigo no WhatsApp
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="mailto:oi@ciclup.com?subject=Fechamento%20-%20Proposta%20Sotero%20Constru%C3%A7%C3%B5es">
+            Fechar por e-mail
+            <span aria-hidden="true">✉</span>
+          </a>
+        </div>
+
+        <div class="note" style="margin-top:10px;">
+          Substitua <span style="font-family:var(--mono);">5585996308174</span> e
+          <span style="font-family:var(--mono);">oi@ciclup.com</span> pelos seus dados antes de enviar.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validade" aria-label="Validade">
+      <div class="section-header">
+        <h2>7. Validade</h2>
+        <div class="hint">prazo desta proposta</div>
+      </div>
+      <div class="section-body">
+        <p style="margin:0;color:var(--muted);font-size:14.5px;">
+          Esta proposta é válida por <b>7 dias a partir do envio</b>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-card">
+      <div>
+        <b style="color:rgba(255,255,255,.85)">Darllan Moreira</b>
+        <div class="meta">Produção audiovisual e conteúdo estratégico</div>
+      </div>
+      <div class="meta">
+        Documento gerado em 04/03/2026 • Fortaleza/CE
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
